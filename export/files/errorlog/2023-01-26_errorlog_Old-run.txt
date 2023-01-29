@@ -1,0 +1,41 @@
+18:01:33: APGN (ID:355) Traceback (most recent call last):
+  File "C:\Users\user\IdeaProjects\finvizScrapr\export\DatabaseInsertion.py", line 23, in insert
+    insertStatements(company_key, data["statements"])
+  File "C:\Users\user\IdeaProjects\finvizScrapr\export\DatabaseInsertion.py", line 96, in insertStatements
+    "VALUES (" + str(statement_key) + ", \"" + dates[index] + "\", " + amount + ");")
+IndexError: list index out of range
+
+18:30:50: GMGI (ID:2156) Traceback (most recent call last):
+  File "C:\Users\user\IdeaProjects\finvizScrapr\export\DatabaseInsertion.py", line 23, in insert
+    insertStatements(company_key, data["statements"])
+  File "C:\Users\user\IdeaProjects\finvizScrapr\export\DatabaseInsertion.py", line 95, in insertStatements
+    database.execute("INSERT INTO " + db_cells[statement_type] + "(key, period_end, information) " +
+sqlite3.OperationalError: near "Months": syntax error
+
+18:37:19: ID (ID:None) Traceback (most recent call last):
+  File "C:\Users\user\IdeaProjects\finvizScrapr\export\DatabaseInsertion.py", line 23, in insert
+    insertStatements(company_key, data["statements"])
+  File "C:\Users\user\IdeaProjects\finvizScrapr\export\DatabaseInsertion.py", line 81, in insertStatements
+    database.execute("INSERT INTO " + db_rows[statement_type] + " (key, data_item, row_number) " +
+sqlite3.OperationalError: no such column: None
+
+18:38:48: INDT (ID:2562) Traceback (most recent call last):
+  File "C:\Users\user\IdeaProjects\finvizScrapr\export\DatabaseInsertion.py", line 23, in insert
+    insertStatements(company_key, data["statements"])
+  File "C:\Users\user\IdeaProjects\finvizScrapr\export\DatabaseInsertion.py", line 95, in insertStatements
+    database.execute("INSERT INTO " + db_cells[statement_type] + "(key, period_end, information) " +
+sqlite3.OperationalError: near "Weeks": syntax error
+
+19:45:50: VAQC (ID:5175) Traceback (most recent call last):
+  File "C:\Users\user\IdeaProjects\finvizScrapr\export\DatabaseInsertion.py", line 23, in insert
+    insertStatements(company_key, data["statements"])
+  File "C:\Users\user\IdeaProjects\finvizScrapr\export\DatabaseInsertion.py", line 96, in insertStatements
+    "VALUES (" + str(statement_key) + ", \"" + dates[index] + "\", " + amount + ");")
+IndexError: list index out of range
+
+19:54:03: XAIR (ID:5448) Traceback (most recent call last):
+  File "C:\Users\user\IdeaProjects\finvizScrapr\export\DatabaseInsertion.py", line 23, in insert
+    insertStatements(company_key, data["statements"])
+  File "C:\Users\user\IdeaProjects\finvizScrapr\export\DatabaseInsertion.py", line 95, in insertStatements
+    database.execute("INSERT INTO " + db_cells[statement_type] + "(key, period_end, information) " +
+sqlite3.OperationalError: near "Months": syntax error

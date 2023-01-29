@@ -1,0 +1,411 @@
+{
+    "symbol": "MTP",
+    "name": "Midatech Pharma plc",
+    "sector": "Healthcare",
+    "industry": "Biotechnology",
+    "country": "United Kingdom",
+    "exchange": "NASD",
+    "statements": {
+        "Income Statement": {
+            "Dates": [
+                "TTM",
+                "12/31/2021",
+                "12/31/2020",
+                "12/31/2019",
+                "12/31/2018"
+            ],
+            "Total Revenue": [
+                "0.65",
+                "0.58",
+                "0.34"
+            ],
+            "Cost of Revenue": [
+                "",
+                "",
+                ""
+            ],
+            "Gross Profit": [
+                "",
+                "",
+                ""
+            ],
+            "Selling General and Administrative": [
+                "3.14",
+                "2.95",
+                "4.96"
+            ],
+            "Research and Development": [
+                "5.06",
+                "4.65",
+                "6.07"
+            ],
+            "Unusual Expense/Income": [
+                "",
+                "0.00",
+                "12.37"
+            ],
+            "Total Operating Expense": [
+                "8.19",
+                "7.58",
+                "23.38"
+            ],
+            "Operating Income": [
+                "-7.54",
+                "-7.00",
+                "-23.04"
+            ],
+            "Interest Income Net": [
+                "1.43",
+                "0.89",
+                "-0.43"
+            ],
+            "Other Income Net": [
+                "",
+                "",
+                ""
+            ],
+            "Net Income Before Taxes": [
+                "-6.11",
+                "-6.11",
+                "-23.47"
+            ],
+            "Provision for Income Taxes": [
+                "-0.75",
+                "-0.65",
+                "-1.28"
+            ],
+            "Net Income": [
+                "-5.37",
+                "-5.46",
+                "-22.19"
+            ],
+            "Income Avail. to Common Excl. Extraord.": [
+                "-5.37",
+                "-5.46",
+                "-22.19"
+            ],
+            "Income Avail. to Common Incl. Extraord.": [
+                "-5.37",
+                "-5.46",
+                "-22.19"
+            ],
+            "Diluted Average Shares": [
+                "19.63",
+                "16.11",
+                "8.57"
+            ],
+            "Diluted EPS Excl. Extraord.": [
+                "-0.27332",
+                "-0.33893",
+                "-2.58975"
+            ],
+            "Diluted EPS Incl. Extraord.": [
+                "-0.27332",
+                "-0.33893",
+                "-2.58975"
+            ]
+        },
+        "Balance Sheet": {
+            "Dates": [
+                "12/31/2021",
+                "12/31/2020",
+                "12/31/2019",
+                "12/31/2018"
+            ],
+            "Cash and Equivalents": [
+                "",
+                "",
+                ""
+            ],
+            "Short Term Investments": [
+                "",
+                "",
+                ""
+            ],
+            "Cash and Short Term Investments": [
+                "10.06",
+                "7.55",
+                "10.93"
+            ],
+            "Accounts Receivable - Trade Net": [
+                "0.03",
+                "0.10",
+                "0.99"
+            ],
+            "Total Receivables Net": [
+                "1.10",
+                "1.47",
+                "2.81"
+            ],
+            "Total Inventory": [
+                "",
+                "0.00",
+                "0.00"
+            ],
+            "Total Current Assets": [
+                "11.76",
+                "9.28",
+                "13.74"
+            ],
+            "Property Plant And Equipment - Gross": [
+                "2.79",
+                "2.14",
+                "7.55"
+            ],
+            "Property Plant And Equipment - Net": [
+                "1.15",
+                "0.54",
+                "2.15"
+            ],
+            "Goodwill Net": [
+                "0.00",
+                "0.00",
+                "2.29"
+            ],
+            "Intangibles Net": [
+                "0.00",
+                "0.00",
+                "10.09"
+            ],
+            "Long Term Investments": [
+                "",
+                "",
+                ""
+            ],
+            "Other Long Term Assets": [
+                "",
+                "",
+                ""
+            ],
+            "Total Assets": [
+                "12.91",
+                "9.82",
+                "30.89"
+            ],
+            "Accounts Payable": [
+                "0.48",
+                "0.34",
+                "0.72"
+            ],
+            "Accrued Expenses": [
+                "0.55",
+                "0.77",
+                "1.76"
+            ],
+            "Notes Payable/Short Term Debt": [
+                "0.00",
+                "0.00",
+                "0.00"
+            ],
+            "Current Port. of LT Debt/Capital Leases": [
+                "0.15",
+                "0.20",
+                "0.41"
+            ],
+            "Other Current liabilities": [
+                "0.66",
+                "1.68",
+                "2.77"
+            ],
+            "Total Current Liabilities": [
+                "1.84",
+                "2.99",
+                "5.67"
+            ],
+            "Long Term Debt": [
+                "0.00",
+                "0.00",
+                "4.76"
+            ],
+            "Capital Lease Obligations": [
+                "0.62",
+                "0.06",
+                "0.91"
+            ],
+            "Total Long Term Debt": [
+                "0.62",
+                "0.06",
+                "5.67"
+            ],
+            "Total Debt": [
+                "0.77",
+                "0.26",
+                "6.08"
+            ],
+            "Other Liabilities": [
+                "0.00",
+                "0.05",
+                "0.00"
+            ],
+            "Total Liabilities": [
+                "2.46",
+                "3.10",
+                "11.34"
+            ],
+            "Common Stock": [
+                "1.10",
+                "1.06",
+                "1.02"
+            ],
+            "Additional Paid-In Capital": [
+                "83.43",
+                "74.36",
+                "65.88"
+            ],
+            "Retained Earnings": [
+                "-74.08",
+                "-68.71",
+                "-46.84"
+            ],
+            "Unrealized Gain (Loss)": [
+                "",
+                "",
+                ""
+            ],
+            "Other Equity": [
+                "0.00",
+                "0.00",
+                "-0.51"
+            ],
+            "Total Equity": [
+                "10.45",
+                "6.72",
+                "19.56"
+            ],
+            "Total Liabilities and Equity": [
+                "12.91",
+                "9.82",
+                "30.89"
+            ],
+            "Total Common Shares Outstanding": [
+                "19.69",
+                "12.61",
+                "4.70"
+            ],
+            "Full-Time Employees": [
+                "20",
+                "",
+                ""
+            ],
+            "Number of Common Shareholders": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "Cash Flow": {
+            "Dates": [
+                "TTM",
+                "12/31/2021",
+                "12/31/2020",
+                "12/31/2019",
+                "12/31/2018"
+            ],
+            "Net Income": [
+                "-5.37",
+                "-5.46",
+                "-22.19"
+            ],
+            "Depreciation/Depletion": [
+                "0.41",
+                "0.40",
+                "1.21"
+            ],
+            "Amortization": [
+                "0.00",
+                "0.00",
+                "0.01"
+            ],
+            "Deferred Taxes": [
+                "",
+                "",
+                ""
+            ],
+            "Non-Cash Items": [
+                "-2.02",
+                "-1.49",
+                "11.28"
+            ],
+            "Changes in Working Capital": [
+                "0.54",
+                "0.54",
+                "0.40"
+            ],
+            "Cash from Operating Activities": [
+                "-6.44",
+                "-6.01",
+                "-9.30"
+            ],
+            "Capital Expenditures": [
+                "-0.16",
+                "-0.32",
+                "-0.21"
+            ],
+            "Other Investing Cash Flow Items": [
+                "0.02",
+                "0.04",
+                "2.78"
+            ],
+            "Cash from Investing Activities": [
+                "-0.15",
+                "-0.28",
+                "2.57"
+            ],
+            "Financing Cash Flow Items": [
+                "-0.01",
+                "-0.01",
+                "0.01"
+            ],
+            "Total Cash Dividends Paid": [
+                "",
+                "",
+                ""
+            ],
+            "Issuance (Retirement) of Stock": [
+                "8.95",
+                "9.04",
+                "9.74"
+            ],
+            "Issuance (Retirement) of Debt": [
+                "-0.14",
+                "-0.21",
+                "-6.67"
+            ],
+            "Cash from Financing Activities": [
+                "8.81",
+                "8.80",
+                "3.08"
+            ],
+            "Foreign Exchange Effects": [
+                "-0.00",
+                "-0.01",
+                "0.26"
+            ],
+            "Net Cash - Beginning Balance": [
+                "",
+                "7.55",
+                "10.93"
+            ],
+            "Net Cash - Ending Balance": [
+                "",
+                "10.06",
+                "7.55"
+            ],
+            "Net Change in Cash": [
+                "2.22",
+                "2.51",
+                "-3.38"
+            ],
+            "Cash Interest Paid": [
+                "0.01",
+                "0.01",
+                "0.03"
+            ],
+            "Cash Taxes Paid": [
+                "-1.16",
+                "-1.16",
+                "-1.95"
+            ]
+        }
+    }
+}

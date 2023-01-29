@@ -1,0 +1,421 @@
+{
+    "symbol": "ALB",
+    "name": "Albemarle Corporation",
+    "sector": "Basic Materials",
+    "industry": "Specialty Chemicals",
+    "country": "USA",
+    "exchange": "NYSE",
+    "statements": {
+        "Income Statement": {
+            "Dates": [
+                "TTM",
+                "12/31/2021",
+                "12/31/2020",
+                "12/31/2019",
+                "12/31/2018",
+                "12/31/2017",
+                "12/31/2016",
+                "12/31/2015"
+            ],
+            "Total Revenue": [
+                "5593.33",
+                "3327.96",
+                "3128.91"
+            ],
+            "Cost of Revenue": [
+                "3280.27",
+                "2319.49",
+                "2132.06"
+            ],
+            "Gross Profit": [
+                "2313.06",
+                "1008.47",
+                "996.85"
+            ],
+            "Selling General and Administrative": [
+                "468.67",
+                "417.99",
+                "393.56"
+            ],
+            "Research and Development": [
+                "63.95",
+                "54.03",
+                "59.21"
+            ],
+            "Unusual Expense/Income": [
+                "176.37",
+                "-257.17",
+                "53.96"
+            ],
+            "Total Operating Expense": [
+                "3989.26",
+                "2534.32",
+                "2638.80"
+            ],
+            "Operating Income": [
+                "1604.07",
+                "793.63",
+                "490.11"
+            ],
+            "Interest Income Net": [
+                "-104.24",
+                "-61.48",
+                "-68.32"
+            ],
+            "Other Income Net": [
+                "62.47",
+                "-598.54",
+                "-62.98"
+            ],
+            "Net Income Before Taxes": [
+                "1562.29",
+                "133.62",
+                "373.52"
+            ],
+            "Provision for Income Taxes": [
+                "381.51",
+                "29.45",
+                "54.42"
+            ],
+            "Net Income": [
+                "1553.55",
+                "123.67",
+                "375.76"
+            ],
+            "Income Avail. to Common Excl. Extraord.": [
+                "1553.55",
+                "123.67",
+                "375.76"
+            ],
+            "Income Avail. to Common Incl. Extraord.": [
+                "1553.55",
+                "123.67",
+                "375.76"
+            ],
+            "Diluted Average Shares": [
+                "117.56",
+                "116.54",
+                "106.81"
+            ],
+            "Diluted EPS Excl. Extraord.": [
+                "13.18825",
+                "1.06123",
+                "3.51813"
+            ],
+            "Diluted EPS Incl. Extraord.": [
+                "13.18825",
+                "1.06123",
+                "3.51813"
+            ]
+        },
+        "Balance Sheet": {
+            "Dates": [
+                "12/31/2021",
+                "12/31/2020",
+                "12/31/2019",
+                "12/31/2018",
+                "12/31/2017",
+                "12/31/2016",
+                "12/31/2015",
+                "12/31/2014"
+            ],
+            "Cash and Equivalents": [
+                "439.27",
+                "746.72",
+                "613.11"
+            ],
+            "Short Term Investments": [
+                "",
+                "",
+                ""
+            ],
+            "Cash and Short Term Investments": [
+                "439.27",
+                "746.72",
+                "613.11"
+            ],
+            "Accounts Receivable - Trade Net": [
+                "556.92",
+                "530.84",
+                "612.65"
+            ],
+            "Total Receivables Net": [
+                "700.06",
+                "637.83",
+                "752.45"
+            ],
+            "Total Inventory": [
+                "812.92",
+                "750.24",
+                "768.98"
+            ],
+            "Total Current Assets": [
+                "2007.98",
+                "2206.18",
+                "2225.11"
+            ],
+            "Property Plant And Equipment - Gross": [
+                "8229.49",
+                "7563.93",
+                "6951.71"
+            ],
+            "Property Plant And Equipment - Net": [
+                "6064.36",
+                "5490.92",
+                "5043.34"
+            ],
+            "Goodwill Net": [
+                "1597.63",
+                "1665.52",
+                "1578.79"
+            ],
+            "Intangibles Net": [
+                "308.95",
+                "349.11",
+                "354.62"
+            ],
+            "Long Term Investments": [
+                "897.71",
+                "656.24",
+                "579.81"
+            ],
+            "Other Long Term Assets": [
+                "97.50",
+                "82.98",
+                "79.20"
+            ],
+            "Total Assets": [
+                "10974.12",
+                "10450.95",
+                "9860.86"
+            ],
+            "Accounts Payable": [
+                "647.99",
+                "483.22",
+                "574.14"
+            ],
+            "Accrued Expenses": [
+                "763.29",
+                "440.76",
+                "572.68"
+            ],
+            "Notes Payable/Short Term Debt": [
+                "0.00",
+                "0.00",
+                "0.00"
+            ],
+            "Current Port. of LT Debt/Capital Leases": [
+                "389.92",
+                "804.68",
+                "187.34"
+            ],
+            "Other Current liabilities": [
+                "73.14",
+                "73.19",
+                "74.84"
+            ],
+            "Total Current Liabilities": [
+                "1874.34",
+                "1801.85",
+                "1409.00"
+            ],
+            "Long Term Debt": [
+                "1930.31",
+                "2708.84",
+                "2804.03"
+            ],
+            "Capital Lease Obligations": [
+                "74.01",
+                "58.54",
+                "58.89"
+            ],
+            "Total Long Term Debt": [
+                "2004.32",
+                "2767.38",
+                "2862.92"
+            ],
+            "Total Debt": [
+                "2394.24",
+                "3572.06",
+                "3050.26"
+            ],
+            "Other Liabilities": [
+                "936.58",
+                "1018.27",
+                "1097.51"
+            ],
+            "Total Liabilities": [
+                "5348.85",
+                "6182.72",
+                "5928.61"
+            ],
+            "Common Stock": [
+                "1.17",
+                "1.07",
+                "1.06"
+            ],
+            "Additional Paid-In Capital": [
+                "2920.01",
+                "1438.04",
+                "1383.45"
+            ],
+            "Retained Earnings": [
+                "3096.54",
+                "3155.25",
+                "2943.48"
+            ],
+            "Unrealized Gain (Loss)": [
+                "",
+                "",
+                ""
+            ],
+            "Other Equity": [
+                "-392.45",
+                "-326.13",
+                "-395.74"
+            ],
+            "Total Equity": [
+                "5625.27",
+                "4268.23",
+                "3932.25"
+            ],
+            "Total Liabilities and Equity": [
+                "10974.12",
+                "10450.95",
+                "9860.86"
+            ],
+            "Total Common Shares Outstanding": [
+                "117.02",
+                "106.84",
+                "106.04"
+            ],
+            "Full-Time Employees": [
+                "6000",
+                "5900",
+                "6000"
+            ],
+            "Number of Common Shareholders": [
+                "2180",
+                "2279",
+                "2349"
+            ]
+        },
+        "Cash Flow": {
+            "Dates": [
+                "TTM",
+                "12/31/2021",
+                "12/31/2020",
+                "12/31/2019",
+                "12/31/2018",
+                "12/31/2017",
+                "12/31/2016",
+                "12/31/2015"
+            ],
+            "Net Income": [
+                "1663.81",
+                "199.94",
+                "446.62"
+            ],
+            "Depreciation/Depletion": [
+                "283.51",
+                "254.00",
+                "231.98"
+            ],
+            "Amortization": [
+                "",
+                "",
+                ""
+            ],
+            "Deferred Taxes": [
+                "78.39",
+                "-38.50",
+                "-1.98"
+            ],
+            "Non-Cash Items": [
+                "-263.83",
+                "-314.82",
+                "-87.26"
+            ],
+            "Changes in Working Capital": [
+                "-952.62",
+                "243.63",
+                "209.55"
+            ],
+            "Cash from Operating Activities": [
+                "809.27",
+                "344.26",
+                "798.91"
+            ],
+            "Capital Expenditures": [
+                "-1116.86",
+                "-953.67",
+                "-850.48"
+            ],
+            "Other Investing Cash Flow Items": [
+                "-4.21",
+                "287.08",
+                "-13.10"
+            ],
+            "Cash from Investing Activities": [
+                "-1121.07",
+                "-666.59",
+                "-863.57"
+            ],
+            "Financing Cash Flow Items": [
+                "-106.51",
+                "-131.38",
+                "-41.16"
+            ],
+            "Total Cash Dividends Paid": [
+                "-183.78",
+                "-177.85",
+                "-161.82"
+            ],
+            "Issuance (Retirement) of Stock": [
+                "3.76",
+                "1472.28",
+                "40.44"
+            ],
+            "Issuance (Retirement) of Debt": [
+                "1506.43",
+                "-1112.83",
+                "339.80"
+            ],
+            "Cash from Financing Activities": [
+                "1219.90",
+                "50.21",
+                "177.26"
+            ],
+            "Foreign Exchange Effects": [
+                "-120.35",
+                "-35.33",
+                "21.01"
+            ],
+            "Net Cash - Beginning Balance": [
+                "",
+                "746.72",
+                "613.11"
+            ],
+            "Net Cash - Ending Balance": [
+                "",
+                "439.27",
+                "746.72"
+            ],
+            "Net Change in Cash": [
+                "787.75",
+                "-307.45",
+                "133.61"
+            ],
+            "Cash Interest Paid": [
+                "",
+                "27.73",
+                "66.38"
+            ],
+            "Cash Taxes Paid": [
+                "",
+                "130.84",
+                "52.10"
+            ]
+        }
+    }
+}

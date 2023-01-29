@@ -1,0 +1,35 @@
+20:43:37: APGN (ID:355) Traceback (most recent call last):
+  File "C:\Users\user\IdeaProjects\finvizScrapr\export\DatabaseInsertion.py", line 23, in insert
+    insertStatements(company_key, data["statements"])
+  File "C:\Users\user\IdeaProjects\finvizScrapr\export\DatabaseInsertion.py", line 103, in insertStatements
+    "VALUES (" + str(statement_key) + ", \"" + dates[index] + "\", " + amount + ");")
+IndexError: list index out of range
+
+21:12:51: GMGI (ID:2156) Traceback (most recent call last):
+  File "C:\Users\user\IdeaProjects\finvizScrapr\export\DatabaseInsertion.py", line 23, in insert
+    insertStatements(company_key, data["statements"])
+  File "C:\Users\user\IdeaProjects\finvizScrapr\export\DatabaseInsertion.py", line 102, in insertStatements
+    database.execute("INSERT INTO " + db_cells[statement_type] + "(key, period_end, information) " +
+sqlite3.OperationalError: near "Months": syntax error
+
+21:20:50: INDT (ID:2562) Traceback (most recent call last):
+  File "C:\Users\user\IdeaProjects\finvizScrapr\export\DatabaseInsertion.py", line 23, in insert
+    insertStatements(company_key, data["statements"])
+  File "C:\Users\user\IdeaProjects\finvizScrapr\export\DatabaseInsertion.py", line 102, in insertStatements
+    database.execute("INSERT INTO " + db_cells[statement_type] + "(key, period_end, information) " +
+sqlite3.OperationalError: near "Weeks": syntax error
+
+22:27:32: VAQC (ID:5175) Traceback (most recent call last):
+  File "C:\Users\user\IdeaProjects\finvizScrapr\export\DatabaseInsertion.py", line 23, in insert
+    insertStatements(company_key, data["statements"])
+  File "C:\Users\user\IdeaProjects\finvizScrapr\export\DatabaseInsertion.py", line 103, in insertStatements
+    "VALUES (" + str(statement_key) + ", \"" + dates[index] + "\", " + amount + ");")
+IndexError: list index out of range
+
+22:35:45: XAIR (ID:5448) Traceback (most recent call last):
+  File "C:\Users\user\IdeaProjects\finvizScrapr\export\DatabaseInsertion.py", line 23, in insert
+    insertStatements(company_key, data["statements"])
+  File "C:\Users\user\IdeaProjects\finvizScrapr\export\DatabaseInsertion.py", line 102, in insertStatements
+    database.execute("INSERT INTO " + db_cells[statement_type] + "(key, period_end, information) " +
+sqlite3.OperationalError: near "Months": syntax error
+
