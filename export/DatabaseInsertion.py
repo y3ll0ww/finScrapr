@@ -13,9 +13,15 @@ errors = 0
 
 update_pairs = []
 
+# Global iterative constants
+company_key = None
+statement_key = None
+statement_type = None
+statement = {}
+
 
 def insert():
-    global errors
+    global company_key, errors
 
     database_empty = check_database_is_empty()
 
@@ -31,7 +37,7 @@ def insert():
             company_key = update_company_details(data)
 
         try:
-            insert_statements(company_key, data["statements"])
+            insert_statements(data["statements"])
             print(colored(GREEN, "SUCCESS", True) + " (" + colored(YELLOW, data["symbol"]) + ")")
         except Exception as e:
             tb = str(''.join(traceback.format_exception(None, e, e.__traceback__)))
@@ -44,47 +50,49 @@ def insert():
 
         print(process_notice(file_num))
 
-    print("Database insertion " + colored(GREEN, "complete", True))
+    print("Database insertion " + colored(GREEN, "COMPLETE", True))
 
 
-def insert_statements(company_key, obj):
-    types = list(obj.keys())
+def insert_statements(obj):
+    global company_key, statement_key, statement_type, statement, row_number, data_item
 
-    for statement_type in types:
+    statement_types = list(obj.keys())
+
+    for type in statement_types:
+        statement_type = type
         print("Adding " + colored(BLUE, statement_type) + "...")
 
-        database = establish_connection(selected_database)
+        connection = establish_connection(selected_database)
 
         row_number = 1
         statement = obj[statement_type]
 
         dates = [date for date in statement["Dates"][CELLS]]
         fl_data_items = [data_item for data_item in statement]
-        db_data_items = get_data_items_from_database(database, statement_type, company_key)
+        db_data_items = get_data_items_from_database(connection)
 
         for index, data_item in enumerate(ordered_data_items(db_data_items, fl_data_items)):
             # Data item present in file and in database; update
             if data_item in fl_data_items and data_item in db_data_items:
-                statement_key = get_statement_key(database, statement_type, company_key, data_item)
-                style = statement[data_item][STYLE]
-                update_statement(database, statement_type, row_number, company_key, data_item, style)
+                statement_key = get_statement_key(connection, data_item)
+                update_statement(connection, row_number, data_item, statement[data_item][STYLE])
                 update = True
             # Data item present in file but not in database; insert into database
             elif data_item in fl_data_items and data_item not in db_data_items:
-                add_statement(database, statement_type, company_key, statement, row_number, data_item)
-                statement_key = get_statement_key(database, statement_type, company_key, data_item)
+                add_statement(connection, row_number, data_item)
+                statement_key = get_statement_key(connection, data_item)
                 update = False
             # Data item not present in file but present in database; only row number should be updated (no cell tables)
             else:
-                update_statement(database, statement_type, row_number, company_key, data_item, None)
+                update_statement(connection, row_number, data_item)
                 row_number += 1
                 continue
 
-            insert_data(database, statement, data_item, statement_type, statement_key, dates, update)
+            insert_data(connection, data_item, dates, update)
 
             row_number += 1
 
-        database.close()
+        connection.close()
 
 
 def add_company_details(company):
@@ -118,7 +126,7 @@ def add_company_details(company):
 def update_company_details(company):
     database = establish_connection(selected_database)
 
-    company_id = get_compay_id(company["symbol"])
+    company_id = get_company_id(company["symbol"])
 
     database.execute("UPDATE companies SET " +
                      "country = \"" + company["country"] + "\", " +
@@ -133,18 +141,22 @@ def update_company_details(company):
     return company_id
 
 
-def add_statement(database, statement_type, company_key, statement, row_number, data_item):
+def add_statement(database, row, item):
+    global statement_type, company_key, statement
+
     database.execute("INSERT INTO " + db_rows[statement_type] + " (key, data_item, row_number,style) " +
                      "VALUES (" +
                      str(company_key) + ", \"" +
-                     data_item + "\", " +
-                     str(row_number) + ", '" +
-                     statement[data_item][STYLE] + "');")
+                     item + "\", " +
+                     str(row) + ", '" +
+                     statement[item][STYLE] + "');")
     database.commit()
 
 
-def update_statement(database, statement_type, row_number, company_key, data_item, style):
-    update_string = "row_number = " + str(row_number)
+def update_statement(database, row, item, style=None):
+    global statement_type, company_key
+
+    update_string = "row_number = " + str(row)
     if style is None:
         update_string += " "
     else:
@@ -153,14 +165,16 @@ def update_statement(database, statement_type, row_number, company_key, data_ite
     database.execute("UPDATE " + db_rows[statement_type] + " SET " +
                      update_string +
                      "WHERE key = " + str(company_key) + " " +
-                     "AND data_item = \"" + data_item + "\";")
+                     "AND data_item = \"" + item + "\";")
     database.commit()
 
 
-def insert_data(database, statement, data_item, statement_type, statement_key, dates, update):
-    db_dates = get_dates_for_data_item(database, statement_type, statement_key)
+def insert_data(database, item, dates, update):
+    global statement, statement_key, statement_type
 
-    for index, amount in enumerate(statement[data_item][CELLS]):
+    db_dates = get_dates_for_data_item(database)
+
+    for index, amount in enumerate(statement[item][CELLS]):
         if amount == "":
             amount = "NULL"
 
@@ -189,21 +203,25 @@ def insert_data(database, statement, data_item, statement_type, statement_key, d
         database.commit()
 
 
-def get_dates_for_data_item(database, statement_type, statement_key):
+def get_dates_for_data_item(database):
+    global statement_type, statement_key
+
     cursor = database.execute("SELECT period_end FROM " + db_cells[statement_type] + " " +
                               "WHERE key = " + str(statement_key) + ";")
 
     return [date[0] for date in cursor]
 
 
-def get_compay_id(symbol):
+def get_company_id(symbol):
     for pair in update_pairs:
         if symbol == pair[1]:
             return pair[0]
     return 0
 
 
-def get_data_items_from_database(database, statement_type, company_key):
+def get_data_items_from_database(database):
+    global company_key, statement_type
+
     cursor = database.execute("SELECT data_item FROM " + db_rows[statement_type] + " " +
                               "WHERE key = " + str(company_key) + " " +
                               "ORDER BY row_number ASC;")
@@ -211,11 +229,13 @@ def get_data_items_from_database(database, statement_type, company_key):
     return [data_item[0] for data_item in cursor]
 
 
-def get_statement_key(database, statement_type, company_key, data_item):
+def get_statement_key(database, item):
+    global statement_type, company_key
+
     # Index is used to pair data in "<statement> Cell" table
     cursor = database.execute("SELECT ID FROM " + db_rows[statement_type] + " " +
                               "WHERE key = " + str(company_key) + " " +
-                              "AND data_item = \"" + data_item + "\";")
+                              "AND data_item = \"" + item + "\";")
     return get_result(cursor)
 
 

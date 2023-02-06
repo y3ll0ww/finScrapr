@@ -28,16 +28,13 @@
       <connection connection-id="6ac18ace-a89a-4e41-b85c-2edcb1854104">
         <schema name="main" object-types="table, view, column" />
       </connection>
-      <connection connection-id="d6a71554-954d-4ac8-9159-b15b354c16fa">
-        <schema name="main" object-types="table, view, column" />
-      </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="6ac18ace-a89a-4e41-b85c-2edcb1854104">
-      <console name="23-01-26_financials" type="STANDARD" schema="main" session="Main"><![CDATA[SELECT * FROM companies
+      <console name="23-01-26_financials" type="STANDARD" schema="main" session="Main">SELECT * FROM companies
 
-SELECT ID FROM companies WHERE symbol = "AAPL" AND name = "Apple Inc.";
+SELECT ID FROM companies WHERE symbol = &quot;AAPL&quot; AND name = &quot;Apple Inc.&quot;;
 
 SELECT * FROM income_statement_rows WHERE key IS 1
 SELECT * FROM income_statement_cells WHERE key IS 1
@@ -88,12 +85,12 @@ FROM companies AS c
 INNER JOIN cash_flow_rows AS cfr ON c.ID = cfr.key
 INNER JOIN cash_flow_cells AS cfc ON cfr.ID = cfc.key
 WHERE c.ID = 50
-ORDER BY c.ID ASC, cfr.row_number ASC]]></console>
+ORDER BY c.ID ASC, cfr.row_number ASC</console>
     </connection>
     <connection id="afdd6b8e-90f0-42ee-afd2-e97027cf77da">
-      <console name="2023-01-26_fundamentals" type="STANDARD" schema="main" session="Main"><![CDATA[SELECT * FROM companies
+      <console name="2023-01-26_fundamentals" type="STANDARD" schema="main" session="Main">SELECT * FROM companies
 
-SELECT ID FROM companies WHERE symbol = "AAPL" AND name = "Apple Inc.";
+SELECT ID FROM companies WHERE symbol = &quot;AAPL&quot; AND name = &quot;Apple Inc.&quot;;
 
 SELECT * FROM income_statement_rows WHERE key IS 1
 SELECT * FROM income_statement_cells WHERE key IS 1
@@ -144,12 +141,12 @@ FROM companies AS c
 INNER JOIN cash_flow_rows AS cfr ON c.ID = cfr.key
 INNER JOIN cash_flow_cells AS cfc ON cfr.ID = cfc.key
 WHERE c.ID = 50
-ORDER BY c.ID ASC, cfr.row_number ASC]]></console>
+ORDER BY c.ID ASC, cfr.row_number ASC</console>
     </connection>
     <connection id="3de2a27b-e53e-47e9-b892-b20b7ac0000e">
-      <console name="Newest" type="STANDARD" schema="main" session="Main"><![CDATA[SELECT * FROM companies
+      <console name="Newest" type="STANDARD" schema="main" session="Main">SELECT * FROM companies
 
-SELECT ID FROM companies WHERE symbol = "AAPL" AND name = "Apple Inc.";
+SELECT ID FROM companies WHERE symbol = &quot;AAPL&quot; AND name = &quot;Apple Inc.&quot;;
 
 SELECT * FROM income_statement_rows WHERE key IS 1
 SELECT * FROM income_statement_cells WHERE key IS 1
@@ -200,10 +197,10 @@ FROM companies AS c
 INNER JOIN cash_flow_rows AS cfr ON c.ID = cfr.key
 INNER JOIN cash_flow_cells AS cfc ON cfr.ID = cfc.key
 WHERE c.ID = 50
-ORDER BY c.ID ASC, cfr.row_number ASC]]></console>
+ORDER BY c.ID ASC, cfr.row_number ASC</console>
     </connection>
     <connection id="d6a71554-954d-4ac8-9159-b15b354c16fa">
-      <console name="test123" type="STANDARD" schema="main" session="Main"><![CDATA[-- Income Statement
+      <console name="test123" type="STANDARD" schema="" session="Main"><![CDATA[-- Income Statement
 SELECT c.ID, c.symbol, c.name, c.industry, c.country, c.exchange, 
        isr.row_number, isr.style, isr.data_item, 
        isc.period_end, isc.information
