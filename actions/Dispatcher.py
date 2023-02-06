@@ -10,6 +10,7 @@ COLLECT_COMPANIES = colored(YELLOW, "WEB: ", True) + colored(YELLOW, "list all c
 COLLECT_FUNDAMENTALS = colored(YELLOW, "WEB: ", True) + colored(YELLOW, "statements for all companies")
 DATABASE_CREATION = colored(YELLOW, "DATABASE: ", True) + colored(YELLOW, "create database")
 DATABASE_INSERTION = colored(YELLOW, "DATABASE: ", True) + colored(YELLOW, "insert into database")
+DATABASE_CLEAR = colored(YELLOW, "DATABASE: ", True) + colored(YELLOW, "clear all data from database")
 QUIT = colored(YELLOW, "Close application")
 
 
@@ -23,6 +24,7 @@ class Dispatcher:
         3: COLLECT_FUNDAMENTALS,
         4: DATABASE_CREATION,
         5: DATABASE_INSERTION,
+        6: DATABASE_CLEAR,
         0: QUIT
     }
 
@@ -32,7 +34,8 @@ class Dispatcher:
               "#2 " + dict.get(2) + "\n" \
               "#3 " + dict.get(3) + "\n\n" \
               "#4 " + dict.get(4) + "\n" \
-              "#5 " + dict.get(5) + "\n\n" \
+              "#5 " + dict.get(5) + "\n" \
+              "#6 " + dict.get(6) + "\n\n" \
               "#0 " + dict.get(0) + "\n"
 
     def start(self):
@@ -70,6 +73,7 @@ class Dispatcher:
         elif action == COLLECT_FUNDAMENTALS:  CompanyDetailsActions.collect()
         elif action == DATABASE_CREATION:     DatabaseActions.create()
         elif action == DATABASE_INSERTION:    DatabaseActions.insert()
+        elif action == DATABASE_CLEAR:        DatabaseActions.clear()
         else:
             print(colored(RED, "Err: No valid action given; make sure it is within range of possible actions."))
 

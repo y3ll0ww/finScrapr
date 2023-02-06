@@ -7,6 +7,8 @@ INCOME_STATEMENT_DB = "Income Statement"
 BALANCE_SHEET_DB = "Balance Sheet"
 CASH_FLOW_DB = "Cash Flow"
 
+COMPANIES = "companies"
+
 INCOME_STATEMENT_ROWS = "income_statement_rows"
 BALANCE_SHEET_ROWS = "balance_sheet_rows"
 CASH_FLOW_ROWS = "cash_flow_rows"
