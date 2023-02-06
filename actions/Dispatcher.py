@@ -79,7 +79,7 @@ class Dispatcher:
 
         elapsed_time = time.time() - start_time
         print(divider("\n===========================================\n"))
-        print(colored(RED, "ACTION ENDED\n", True))
+        print(colored(GREEN, "ACTION ENDED\n", True))
         print(colored(CYAN, time.ctime(time.time())))
         print("Action completed: \"" + action + "\"")
         print(self.__elapsed_time(elapsed_time))
