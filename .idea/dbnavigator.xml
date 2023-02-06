@@ -25,7 +25,10 @@
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
     <loaded-nodes>
-      <connection connection-id="6dd37779-2109-452f-a024-5f0e9803140b">
+      <connection connection-id="6ac18ace-a89a-4e41-b85c-2edcb1854104">
+        <schema name="main" object-types="table, view, column" />
+      </connection>
+      <connection connection-id="d6a71554-954d-4ac8-9159-b15b354c16fa">
         <schema name="main" object-types="table, view, column" />
       </connection>
     </loaded-nodes>
@@ -199,71 +202,61 @@ INNER JOIN cash_flow_cells AS cfc ON cfr.ID = cfc.key
 WHERE c.ID = 50
 ORDER BY c.ID ASC, cfr.row_number ASC]]></console>
     </connection>
-    <connection id="6dd37779-2109-452f-a024-5f0e9803140b">
-      <console name="test123" type="STANDARD" schema="main" session="Main"><![CDATA[SELECT * FROM companies
-
-SELECT ID FROM companies WHERE symbol = "AAPL" AND name = "Apple Inc.";
-
-SELECT * FROM income_statement_rows WHERE key IS 1
-SELECT * FROM income_statement_cells WHERE key IS 1
-
-SELECT * FROM balance_sheet_rows WHERE key IS 8
-SELECT * FROM balance_sheet_cells
-
-SELECT * FROM cash_flow_rows WHERE key IS 8
-SELECT * FROM cash_flow_cells WHERE key IS 1350
-
--------------------------------
-
-DELETE FROM companies
-DELETE FROM income_statement_rows
-DELETE FROM income_statement_cells
-DELETE FROM balance_sheet_rows
-DELETE FROM balance_sheet_cells
-DELETE FROM cash_flow_rows
-DELETE FROM cash_flow_cells
-
--------------------------------
-
--- Income Statement
+    <connection id="d6a71554-954d-4ac8-9159-b15b354c16fa">
+      <console name="test123" type="STANDARD" schema="main" session="Main"><![CDATA[-- Income Statement
 SELECT c.ID, c.symbol, c.name, c.industry, c.country, c.exchange, 
-       isr.row_number, isr.data_item, isr.style,
-       isc.period_end, isc.information 
+       isr.row_number, isr.style, isr.data_item, 
+       isc.period_end, isc.information
 FROM companies AS c
 INNER JOIN income_statement_rows AS isr ON c.ID = isr.key
 INNER JOIN income_statement_cells AS isc ON isr.ID = isc.key
-WHERE c.ID = 2
-ORDER BY c.ID ASC, isr.row_number ASC
+WHERE c.ID = 1
+ORDER BY c.ID ASC, isr.row_number ASC, isc.period_end DESC
 
 -- Balance Sheet
 SELECT c.ID, c.symbol, c.name, c.industry, c.country, c.exchange, 
-       bsr.row_number, bsr.data_item, bsr.style, 
+       bsr.row_number, bsr.style, bsr.data_item, 
        bsc.period_end, bsc.information 
 FROM companies AS c
 INNER JOIN balance_sheet_rows AS bsr ON c.ID = bsr.key
 INNER JOIN balance_sheet_cells AS bsc ON bsr.ID = bsc.key
-WHERE c.ID = 2
-ORDER BY c.ID ASC, bsr.row_number ASC
+WHERE c.ID = 1
+ORDER BY c.ID ASC, bsr.row_number ASC, bsr.period_end DESC
 
 -- Cash Flow
 SELECT c.ID, c.symbol, c.name, c.industry, c.country, c.exchange, 
-       cfr.row_number, cfr.data_item, cfr.style,
+       cfr.row_number, cfr.style, cfr.data_item, 
        cfc.period_end, cfc.information 
 FROM companies AS c
 INNER JOIN cash_flow_rows AS cfr ON c.ID = cfr.key
 INNER JOIN cash_flow_cells AS cfc ON cfr.ID = cfc.key
-WHERE c.ID = 2
-ORDER BY c.ID ASC, cfr.row_number ASC]]></console>
+WHERE c.ID = 1
+ORDER BY c.ID ASC, cfr.row_number ASC, cfr.period_end DESC
+
+-------------------------------
+
+SELECT * FROM companies
+
+SELECT * FROM income_statement_rows
+SELECT * FROM income_statement_cells
+
+SELECT * FROM balance_sheet_rows
+SELECT * FROM balance_sheet_cells
+
+SELECT * FROM cash_flow_rows
+SELECT * FROM cash_flow_cells]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="d6a71554-954d-4ac8-9159-b15b354c16fa" object-ref="consoles/test123" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="6ac18ace-a89a-4e41-b85c-2edcb1854104" />
     <connection id="afdd6b8e-90f0-42ee-afd2-e97027cf77da" />
     <connection id="3de2a27b-e53e-47e9-b892-b20b7ac0000e" />
-    <connection id="6dd37779-2109-452f-a024-5f0e9803140b" />
+    <connection id="d6a71554-954d-4ac8-9159-b15b354c16fa" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -552,7 +545,7 @@ ORDER BY c.ID ASC, cfr.row_number ASC]]></console>
           <object-name-filters />
         </object-filters>
       </connection>
-      <connection id="6dd37779-2109-452f-a024-5f0e9803140b" active="true">
+      <connection id="d6a71554-954d-4ac8-9159-b15b354c16fa" active="true">
         <database>
           <name value="test123" />
           <description value="" />
@@ -567,7 +560,7 @@ ORDER BY c.ID ASC, cfr.row_number ASC]]></console>
           <port value="" />
           <database value="" />
           <files>
-            <file path="C:\Users\user\IdeaProjects\finvizScrapr\export\databases\test123456" schema="main" />
+            <file path="C:\Users\user\IdeaProjects\finvizScrapr\export\databases\test123" schema="main" />
           </files>
           <type value="NONE" />
           <user value="" />
