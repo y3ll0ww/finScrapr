@@ -172,7 +172,6 @@ def insert_data(database, item, dates, update):
     for index, amount in enumerate(statement[item][CELLS]):
         formatted_date = reformat_date(dates[index])
 
-
         if amount == "":
             amount = "NULL"
 
@@ -189,7 +188,7 @@ def insert_data(database, item, dates, update):
 
         if update:
             # If it's an update for a new period, do an insert instead
-            if dates[index] not in db_dates:
+            if formatted_date not in db_dates:
                 database.execute(insert_string)
             # Else update, but only of amount is NULL
             elif amount != "NULL":
