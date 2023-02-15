@@ -25,16 +25,16 @@
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
     <loaded-nodes>
-      <connection connection-id="6ac18ace-a89a-4e41-b85c-2edcb1854104">
-        <schema name="main" object-types="table, view, column" />
+      <connection connection-id="05eb7061-d464-42fe-b624-87e59b73c79e">
+        <schema name="main" object-types="table, view, constraint, index, column, dataset trigger" />
       </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="6ac18ace-a89a-4e41-b85c-2edcb1854104">
-      <console name="23-01-26_financials" type="STANDARD" schema="main" session="Main">SELECT * FROM companies
+      <console name="23-01-26_financials" type="STANDARD" schema="main" session="Main"><![CDATA[SELECT * FROM companies
 
-SELECT ID FROM companies WHERE symbol = &quot;AAPL&quot; AND name = &quot;Apple Inc.&quot;;
+SELECT ID FROM companies WHERE symbol = "AAPL" AND name = "Apple Inc.";
 
 SELECT * FROM income_statement_rows WHERE key IS 1
 SELECT * FROM income_statement_cells WHERE key IS 1
@@ -85,12 +85,12 @@ FROM companies AS c
 INNER JOIN cash_flow_rows AS cfr ON c.ID = cfr.key
 INNER JOIN cash_flow_cells AS cfc ON cfr.ID = cfc.key
 WHERE c.ID = 50
-ORDER BY c.ID ASC, cfr.row_number ASC</console>
+ORDER BY c.ID ASC, cfr.row_number ASC]]></console>
     </connection>
     <connection id="afdd6b8e-90f0-42ee-afd2-e97027cf77da">
-      <console name="2023-01-26_fundamentals" type="STANDARD" schema="main" session="Main">SELECT * FROM companies
+      <console name="2023-01-26_fundamentals" type="STANDARD" schema="main" session="Main"><![CDATA[SELECT * FROM companies
 
-SELECT ID FROM companies WHERE symbol = &quot;AAPL&quot; AND name = &quot;Apple Inc.&quot;;
+SELECT ID FROM companies WHERE symbol = "AAPL" AND name = "Apple Inc.";
 
 SELECT * FROM income_statement_rows WHERE key IS 1
 SELECT * FROM income_statement_cells WHERE key IS 1
@@ -141,12 +141,12 @@ FROM companies AS c
 INNER JOIN cash_flow_rows AS cfr ON c.ID = cfr.key
 INNER JOIN cash_flow_cells AS cfc ON cfr.ID = cfc.key
 WHERE c.ID = 50
-ORDER BY c.ID ASC, cfr.row_number ASC</console>
+ORDER BY c.ID ASC, cfr.row_number ASC]]></console>
     </connection>
     <connection id="3de2a27b-e53e-47e9-b892-b20b7ac0000e">
-      <console name="Newest" type="STANDARD" schema="main" session="Main">SELECT * FROM companies
+      <console name="Newest" type="STANDARD" schema="main" session="Main"><![CDATA[SELECT * FROM companies
 
-SELECT ID FROM companies WHERE symbol = &quot;AAPL&quot; AND name = &quot;Apple Inc.&quot;;
+SELECT ID FROM companies WHERE symbol = "AAPL" AND name = "Apple Inc.";
 
 SELECT * FROM income_statement_rows WHERE key IS 1
 SELECT * FROM income_statement_cells WHERE key IS 1
@@ -197,7 +197,7 @@ FROM companies AS c
 INNER JOIN cash_flow_rows AS cfr ON c.ID = cfr.key
 INNER JOIN cash_flow_cells AS cfc ON cfr.ID = cfc.key
 WHERE c.ID = 50
-ORDER BY c.ID ASC, cfr.row_number ASC</console>
+ORDER BY c.ID ASC, cfr.row_number ASC]]></console>
     </connection>
     <connection id="d6a71554-954d-4ac8-9159-b15b354c16fa">
       <console name="test123" type="STANDARD" schema="" session="Main"><![CDATA[-- Income Statement
@@ -243,10 +243,17 @@ SELECT * FROM balance_sheet_cells
 SELECT * FROM cash_flow_rows
 SELECT * FROM cash_flow_cells]]></console>
     </connection>
+    <connection id="efd71ad0-7684-4a9f-be56-1af7af6e9058">
+      <console name="MarketBeat" type="STANDARD" schema="main" session="Main" />
+    </connection>
+    <connection id="05eb7061-d464-42fe-b624-87e59b73c79e">
+      <console name="hallo" type="STANDARD" schema="main" session="Main"><![CDATA[select * from companies
+select * from income_statement_cells, balance_sheet_cells, cash_flow_cells]]></console>
+    </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
-      <object connection-id="d6a71554-954d-4ac8-9159-b15b354c16fa" object-ref="consoles/test123" />
+      <object connection-id="05eb7061-d464-42fe-b624-87e59b73c79e" object-ref="consoles/hallo" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
@@ -254,6 +261,8 @@ SELECT * FROM cash_flow_cells]]></console>
     <connection id="afdd6b8e-90f0-42ee-afd2-e97027cf77da" />
     <connection id="3de2a27b-e53e-47e9-b892-b20b7ac0000e" />
     <connection id="d6a71554-954d-4ac8-9159-b15b354c16fa" />
+    <connection id="efd71ad0-7684-4a9f-be56-1af7af6e9058" />
+    <connection id="05eb7061-d464-42fe-b624-87e59b73c79e" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -558,6 +567,180 @@ SELECT * FROM cash_flow_cells]]></console>
           <database value="" />
           <files>
             <file path="C:\Users\user\IdeaProjects\finvizScrapr\export\databases\test123" schema="main" />
+          </files>
+          <type value="NONE" />
+          <user value="" />
+          <deprecated-pwd value="" />
+        </database>
+        <properties>
+          <auto-commit value="false" />
+        </properties>
+        <ssh-settings>
+          <active value="false" />
+          <proxy-host value="" />
+          <proxy-port value="22" />
+          <proxy-user value="" />
+          <deprecated-proxy-pwd value="" />
+          <auth-type value="PASSWORD" />
+          <key-file value="" />
+          <key-passphrase value="" />
+        </ssh-settings>
+        <ssl-settings>
+          <active value="false" />
+          <certificate-authority-file value="" />
+          <client-certificate-file value="" />
+          <client-key-file value="" />
+        </ssl-settings>
+        <details>
+          <charset value="UTF-8" />
+          <session-management value="true" />
+          <ddl-file-binding value="true" />
+          <database-logging value="false" />
+          <connect-automatically value="true" />
+          <restore-workspace value="true" />
+          <restore-workspace-deep value="true" />
+          <environment-type value="default" />
+          <connectivity-timeout value="5" />
+          <idle-time-to-disconnect value="30" />
+          <idle-time-to-disconnect-pool value="5" />
+          <credential-expiry-time value="10" />
+          <max-connection-pool-size value="7" />
+          <alternative-statement-delimiter value="" />
+        </details>
+        <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
+          <object-type-filter use-master-settings="true">
+            <object-type name="SCHEMA" enabled="true" />
+            <object-type name="USER" enabled="true" />
+            <object-type name="ROLE" enabled="true" />
+            <object-type name="PRIVILEGE" enabled="true" />
+            <object-type name="CHARSET" enabled="true" />
+            <object-type name="TABLE" enabled="true" />
+            <object-type name="VIEW" enabled="true" />
+            <object-type name="MATERIALIZED_VIEW" enabled="true" />
+            <object-type name="NESTED_TABLE" enabled="true" />
+            <object-type name="COLUMN" enabled="true" />
+            <object-type name="INDEX" enabled="true" />
+            <object-type name="CONSTRAINT" enabled="true" />
+            <object-type name="DATASET_TRIGGER" enabled="true" />
+            <object-type name="DATABASE_TRIGGER" enabled="true" />
+            <object-type name="SYNONYM" enabled="true" />
+            <object-type name="SEQUENCE" enabled="true" />
+            <object-type name="PROCEDURE" enabled="true" />
+            <object-type name="FUNCTION" enabled="true" />
+            <object-type name="PACKAGE" enabled="true" />
+            <object-type name="TYPE" enabled="true" />
+            <object-type name="TYPE_ATTRIBUTE" enabled="true" />
+            <object-type name="ARGUMENT" enabled="true" />
+            <object-type name="DIMENSION" enabled="true" />
+            <object-type name="CLUSTER" enabled="true" />
+            <object-type name="DBLINK" enabled="true" />
+          </object-type-filter>
+          <object-name-filters />
+        </object-filters>
+      </connection>
+      <connection id="efd71ad0-7684-4a9f-be56-1af7af6e9058" active="true">
+        <database>
+          <name value="MarketBeat" />
+          <description value="" />
+          <database-type value="SQLITE" />
+          <config-type value="BASIC" />
+          <database-version value="3.34" />
+          <driver-source value="BUILTIN" />
+          <driver-library value="" />
+          <driver value="" />
+          <url-type value="FILE" />
+          <host value="" />
+          <port value="" />
+          <database value="" />
+          <files>
+            <file path="C:\Users\user\IdeaProjects\v101\v101\companies\database\company_financials005.db" schema="main" />
+          </files>
+          <type value="NONE" />
+          <user value="" />
+          <deprecated-pwd value="" />
+        </database>
+        <properties>
+          <auto-commit value="false" />
+        </properties>
+        <ssh-settings>
+          <active value="false" />
+          <proxy-host value="" />
+          <proxy-port value="22" />
+          <proxy-user value="" />
+          <deprecated-proxy-pwd value="" />
+          <auth-type value="PASSWORD" />
+          <key-file value="" />
+          <key-passphrase value="" />
+        </ssh-settings>
+        <ssl-settings>
+          <active value="false" />
+          <certificate-authority-file value="" />
+          <client-certificate-file value="" />
+          <client-key-file value="" />
+        </ssl-settings>
+        <details>
+          <charset value="UTF-8" />
+          <session-management value="true" />
+          <ddl-file-binding value="true" />
+          <database-logging value="false" />
+          <connect-automatically value="true" />
+          <restore-workspace value="true" />
+          <restore-workspace-deep value="true" />
+          <environment-type value="default" />
+          <connectivity-timeout value="5" />
+          <idle-time-to-disconnect value="30" />
+          <idle-time-to-disconnect-pool value="5" />
+          <credential-expiry-time value="10" />
+          <max-connection-pool-size value="7" />
+          <alternative-statement-delimiter value="" />
+        </details>
+        <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
+          <object-type-filter use-master-settings="true">
+            <object-type name="SCHEMA" enabled="true" />
+            <object-type name="USER" enabled="true" />
+            <object-type name="ROLE" enabled="true" />
+            <object-type name="PRIVILEGE" enabled="true" />
+            <object-type name="CHARSET" enabled="true" />
+            <object-type name="TABLE" enabled="true" />
+            <object-type name="VIEW" enabled="true" />
+            <object-type name="MATERIALIZED_VIEW" enabled="true" />
+            <object-type name="NESTED_TABLE" enabled="true" />
+            <object-type name="COLUMN" enabled="true" />
+            <object-type name="INDEX" enabled="true" />
+            <object-type name="CONSTRAINT" enabled="true" />
+            <object-type name="DATASET_TRIGGER" enabled="true" />
+            <object-type name="DATABASE_TRIGGER" enabled="true" />
+            <object-type name="SYNONYM" enabled="true" />
+            <object-type name="SEQUENCE" enabled="true" />
+            <object-type name="PROCEDURE" enabled="true" />
+            <object-type name="FUNCTION" enabled="true" />
+            <object-type name="PACKAGE" enabled="true" />
+            <object-type name="TYPE" enabled="true" />
+            <object-type name="TYPE_ATTRIBUTE" enabled="true" />
+            <object-type name="ARGUMENT" enabled="true" />
+            <object-type name="DIMENSION" enabled="true" />
+            <object-type name="CLUSTER" enabled="true" />
+            <object-type name="DBLINK" enabled="true" />
+          </object-type-filter>
+          <object-name-filters />
+        </object-filters>
+      </connection>
+      <connection id="05eb7061-d464-42fe-b624-87e59b73c79e" active="true">
+        <database>
+          <name value="hallo" />
+          <description value="" />
+          <database-type value="SQLITE" />
+          <config-type value="BASIC" />
+          <database-version value="3.34" />
+          <driver-source value="BUILTIN" />
+          <driver-library value="" />
+          <driver value="" />
+          <url-type value="FILE" />
+          <host value="" />
+          <port value="" />
+          <database value="" />
+          <files>
+            <file path="C:\Users\user\IdeaProjects\finvizScrapr\export\databases\hallo" schema="main" />
           </files>
           <type value="NONE" />
           <user value="" />

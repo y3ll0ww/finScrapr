@@ -6,7 +6,7 @@ def create_db(name):
     database = establish_connection()
 
     database.execute("""  CREATE TABLE IF NOT EXISTS companies (
-        ID                  INTEGER PRIMARY KEY,
+        CID                 INTEGER PRIMARY KEY,
         symbol              VARCHAR(10) NOT NULL,
         name                VARCHAR(45) NOT NULL,
         sector              VARCHAR(30) NOT NULL,
@@ -31,7 +31,7 @@ def create_db(name):
 def create_statement_table(db_connection, name):
     db_connection.execute("CREATE TABLE IF NOT EXISTS " + name + " ("
                                                                  """
-        ID                  INTEGER PRIMARY KEY,
+        SRID                INTEGER PRIMARY KEY,
         key                 INTEGER,
         data_item           TEXT NOT NULL,
         row_number          INTEGER NOT NULL,
@@ -44,9 +44,9 @@ def create_statement_table(db_connection, name):
 def create_data_table(db_connection, name, key_name):
     db_connection.execute("CREATE TABLE IF NOT EXISTS " + name + " ("
                                                                  """
-        ID                  INTEGER PRIMARY KEY,
+        SCID                INTEGER PRIMARY KEY,
         key                 INTEGER,
-        period_end          DATE NOT NULL,
+        period_end          VARCHAR(15),
         information         DECIMAL(13,10),
         FOREIGN KEY (key)   REFERENCES """ + key_name + "(ID) ON DELETE SET NULL" +
                           ");")

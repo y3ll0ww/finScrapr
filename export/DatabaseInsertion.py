@@ -108,14 +108,9 @@ def add_company_details(company):
                      company["sector"] + "\");")
     database.commit()
 
-    # There is one exception where the ticker symbol is "ID", causing the select query to fail
-    if company["symbol"] != "ID":
-        cursor = database.execute("SELECT ID FROM companies " +
-                                  "WHERE symbol = \"" + company["symbol"] + "\" " +
-                                  "AND name = \"" + company["name"] + "\";")
-    else:
-        cursor = database.execute("SELECT ID FROM companies " +
-                                  "WHERE name = \"" + company["name"] + "\";")
+    cursor = database.execute("SELECT CID FROM companies " +
+                              "WHERE symbol = \"" + company["symbol"] + "\" " +
+                              "AND name = \"" + company["name"] + "\";")
 
     company_key = get_result(cursor)
 
@@ -134,7 +129,7 @@ def update_company_details(company):
                      "industry = \"" + company["industry"] + "\", " +
                      "name = \"" + company["name"] + "\", " +
                      "sector = \"" + company["sector"] + "\" " +
-                     "WHERE ID = " + str(company_id) + ";")
+                     "WHERE CID = " + str(company_id) + ";")
     database.commit()
     database.close()
 
@@ -175,19 +170,22 @@ def insert_data(database, item, dates, update):
     db_dates = get_dates_for_data_item(database)
 
     for index, amount in enumerate(statement[item][CELLS]):
+        formatted_date = reformat_date(dates[index])
+
+
         if amount == "":
             amount = "NULL"
 
         insert_string = "INSERT INTO " + db_cells[statement_type] + "(key, period_end, information) " + \
                         "VALUES (" + \
                         str(statement_key) + ", \"" + \
-                        dates[index] + "\", " + \
+                        formatted_date + "\", " + \
                         amount + ");"
 
         update_string = "UPDATE " + db_cells[statement_type] + " SET " + \
                         "information = " + amount + " " + \
                         "WHERE key = " + str(statement_key) + " " + \
-                        "AND period_end = \"" + dates[index] + "\";"
+                        "AND period_end = \"" + formatted_date + "\";"
 
         if update:
             # If it's an update for a new period, do an insert instead
@@ -233,7 +231,7 @@ def get_statement_key(database, item):
     global statement_type, company_key
 
     # Index is used to pair data in "<statement> Cell" table
-    cursor = database.execute("SELECT ID FROM " + db_rows[statement_type] + " " +
+    cursor = database.execute("SELECT SRID FROM " + db_rows[statement_type] + " " +
                               "WHERE key = " + str(company_key) + " " +
                               "AND data_item = \"" + item + "\";")
     return get_result(cursor)
@@ -284,6 +282,28 @@ def get_result(cursor):
     for item in cursor:
         result = item[0]
     return result
+
+
+def reformat_date(date_string):
+    # Reformat date from MM/DD/YYYY to YYYY/MM/DD
+    if '/' in date_string:
+        try:
+            month, day, year = date_string.split('/')
+            reformatted = year + "/" + month + "/" + day
+            return reformatted
+        except:
+            error("Err: Something went wrong while trying to reformat the date: \"" + date_string + "\"")
+
+    return date_string
+
+
+
+def flip_date(date_string):
+    # Split the date string into day, month, and year
+    day, month, year = date_string.split('/')
+    # Concatenate the year, month, and day strings in reverse order
+    flipped_date = year + '/' + month + '/' + day
+    return flipped_date
 
 
 def process_notice(file_num, eof=False):
